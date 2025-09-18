@@ -29,11 +29,11 @@ const Footer = () => {
 
    return (
       <Container>
-         <footer className="bg-white text-base-300">
-            <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 pb-7">
+         <footer className="bg-white text-base-300 pt-12 pb-8">
+            <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 pb-12">
                {/* Logo */}
                <div>
-                  <Link to={"/"} className="flex items-center gap-3">
+                  <Link to={"/"} className="flex items-center gap-3 w-fit">
                      <img src={logo} alt="Logo" className="w-14" />
                      <p className="text-2xl font-bold">Skilloria</p>
                   </Link>
