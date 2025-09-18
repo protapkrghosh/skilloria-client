@@ -7,8 +7,9 @@
   default: true;
   /* --color-primary: #15D164; */
   --color-primary: #00BF58;
-  --color-secondary: #30394D;
+  --color-secondary: #254035;
   --color-accent: #FFF3CF;
+  --color-base-300: #4C4C4C;
 }
 
 body {
