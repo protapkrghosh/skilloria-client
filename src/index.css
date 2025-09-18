@@ -1,7 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
 @import "tailwindcss";
+@plugin "daisyui";
 @plugin "daisyui/theme" {
   name: "light";
   default: true;
-  --color-primary: blue;
-  --color-secondary: teal;
+  /* --color-primary: #15D164; */
+  --color-primary: #00BF58;
+  --color-secondary: #30394D;
+  --color-accent: #FFF3CF;
+}
+
+body {
+   font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.ebGaramond {
+   font-family: "EB Garamond", serif;
 }
