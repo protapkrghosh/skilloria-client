@@ -2,9 +2,11 @@ import { useForm } from "react-hook-form";
 import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
 import { useState } from "react";
+import useAuth from "../hooks/useAuth";
 
-export default function Register() {
+const Register = () => {
    const [serverError, setServerError] = useState("");
+   const { registerUser } = useAuth();
 
    const {
       register,
@@ -13,14 +15,12 @@ export default function Register() {
       reset,
    } = useForm();
 
-   // Mutation for registration
    const mutation = useMutation({
       mutationFn: async (userData) => {
-         const res = await axios
-            .post(`${import.meta.env.VITE_BASE_URL}/users`, userData)
-            // .then((res) => console.log(res.data))
-            // .catch((error) => console.log(error));
-            console.log(res.data);
+         const res = await axios.post(
+            `${import.meta.env.VITE_BASE_URL}/users`,
+            userData
+         );
          return res.data;
       },
       onError: (error) => {
@@ -37,27 +37,32 @@ export default function Register() {
       },
    });
 
-   const onSubmit = (data) => {
+   const onSubmit = async (data) => {
       const { name, email, photoURL, password, role } = data;
 
-      // Default coins
       const coins = role === "Worker" ? 10 : 50;
 
-      const newUser = {
-         name,
-         email,
-         photoURL,
-         password,
-         role,
-         coins,
-      };
+      try {
+         await registerUser(email, password)
 
-      mutation.mutate(newUser);
+         const newUser = {
+            name,
+            email,
+            photoURL,
+            role,
+            coins,
+         };
+
+         mutation.mutate(newUser);
+      } catch (error) {
+         console.error("Firebase error:", error.message);
+         setServerError(error.message);
+      }
    };
 
    return (
       <div className="min-h-screen flex justify-center items-center bg-[#EFF6F3]">
-         <div className="w-full max-w-xl my-16 p-10 space-y-6 bg-white rounded-xl">
+         <div className="w-full max-w-xl my-16 p-10 space-y-6 bg-white rounded-xl shadow-md">
             <h2 className="ebGaramond text-4xl text-base-300 font-bold text-center tracking-wider">
                Create Account
             </h2>
@@ -100,7 +105,7 @@ export default function Register() {
                   )}
                </div>
 
-               {/* Profile Picture URL */}
+               {/* Profile URL */}
                <div>
                   <input
                      type="url"
@@ -145,7 +150,7 @@ export default function Register() {
                   )}
                </div>
 
-               {/* Role Dropdown */}
+               {/* User Role */}
                <div>
                   <select
                      {...register("role", { required: "Role is required" })}
@@ -162,7 +167,7 @@ export default function Register() {
                   )}
                </div>
 
-               {/* Server Error */}
+               {/* Error */}
                {serverError && (
                   <p className="text-red-500 text-sm">{serverError}</p>
                )}
@@ -177,7 +182,7 @@ export default function Register() {
                </button>
             </form>
 
-            {/* Social Signup */}
+            {/* Social Media Signup */}
             <div className="divider">OR</div>
             <div className="flex gap-3">
                <button className="btn btn-outline flex-1">
@@ -198,4 +203,6 @@ export default function Register() {
          </div>
       </div>
    );
-}
+};
+
+export default Register;
