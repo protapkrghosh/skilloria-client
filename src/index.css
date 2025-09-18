@@ -1,15 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
 
 @import "tailwindcss";
 @plugin "daisyui";
 @plugin "daisyui/theme" {
-  name: "light";
-  default: true;
-  /* --color-primary: #15D164; */
-  --color-primary: #00BF58;
-  --color-secondary: #254035;
-  --color-accent: #FFF3CF;
-  --color-base-300: #4C4C4C;
+   name: "light";
+   default: true;
+   /* --color-primary: #15D164; */
+   --color-primary: #00bf58;
+   --color-secondary: #254035;
+   --color-accent: #fff3cf;
+   --color-base-300: #4c4c4c;
 }
 
 body {
@@ -18,4 +18,12 @@ body {
 
 .ebGaramond {
    font-family: "EB Garamond", serif;
+}
+
+.cus-input {
+   @apply input w-full shadow-none border border-gray-200 bg-[#ECF3F0] focus-within:outline-0 focus:border focus:border-green-200 rounded-lg py-6 mt-1;
+}
+
+.cus-select {
+   @apply w-full shadow-none border border-gray-200 bg-[#ECF3F0] focus-within:outline-0 focus:border focus:border-green-200 rounded-lg mt-1;
 }
