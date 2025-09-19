@@ -2,7 +2,7 @@ import toast from "react-hot-toast";
 import logo from "../assets/skilloria.png";
 import Button from "../components/Button";
 import useAuth from "../hooks/useAuth";
-import Container from "./Container";
+import Container from "../components/Container";
 import { Link, NavLink } from "react-router";
 import { Tooltip } from "react-tooltip";
 import { FaCoins } from "react-icons/fa";
@@ -81,9 +81,10 @@ const Navbar = () => {
                         {links}
                      </ul>
                   </div>
+
                   <Link to={"/"} className="flex items-center gap-3">
                      <img src={logo} alt="Logo" className="w-14" />
-                     <p className="text-2xl font-bold">Skilloria</p>
+                     <p className="text-2xl font-bold hidden md:block">Skilloria</p>
                   </Link>
                </div>
                <div className="navbar-center hidden lg:flex">

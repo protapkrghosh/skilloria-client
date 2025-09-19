@@ -6,7 +6,8 @@
    name: "light";
    default: true;
    /* --color-primary: #15D164; */
-   --color-primary: #00bf58;
+   /* --color-primary: #00bf58; */
+   --color-primary: #198754;
    --color-secondary: #254035;
    --color-accent: #fff3cf;
    --color-base-300: #4c4c4c;

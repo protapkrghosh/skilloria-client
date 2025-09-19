@@ -1,4 +1,4 @@
-import Container from "./Container";
+import Container from "../components/Container";
 import { Link } from "react-router";
 import logo from '../assets/skilloria.png'
 import shape from "../assets/shape.svg";
