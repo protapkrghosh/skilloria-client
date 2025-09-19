@@ -2,9 +2,8 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import { toast } from "react-hot-toast";
 import useAuth from "../hooks/useAuth";
-import { FcGoogle } from "react-icons/fc";
-import { BsGithub } from "react-icons/bs";
 import { useLocation, useNavigate } from "react-router";
+import SocialLogIn from "../components/SocialLogin";
 
 const Register = () => {
    const location = useLocation();
@@ -54,7 +53,7 @@ const Register = () => {
    return (
       <div className="min-h-screen flex justify-center items-center bg-[#EFF6F3]">
          <div className="w-full max-w-xl my-16 p-10 space-y-6 bg-white rounded-xl shadow-md">
-            <div className="text-center mb-10">
+            <div className="text-center">
                <h2 className="ebGaramond text-4xl text-base-300 font-bold tracking-wider">
                   Create Account
                </h2>
@@ -64,19 +63,7 @@ const Register = () => {
             </div>
 
             {/* Social Signup */}
-            <div className="flex flex-col md:flex-row w-full gap-5">
-               <button className="btn bg-white text-secondary border-gray-200 py-6 w-full md:w-[calc(50%-10px)]">
-                  <FcGoogle size={20} />
-                  Login with Google
-               </button>
-
-               <button className="btn bg-white text-secondary border-gray-200 py-6 w-full md:w-[calc(50%-10px)]">
-                  <BsGithub size={20} />
-                  Login with GitHub
-               </button>
-            </div>
-
-            <div className="divider">OR</div>
+            <SocialLogIn />
 
             {/* Form */}
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">

@@ -118,7 +118,7 @@ const Navbar = () => {
                            data-tooltip-id="user-tooltip"
                            data-tooltip-place="bottom"
                         >
-                           <div className="w-10 rounded-full ring-[#e7f0ef] border border-dashed border-primary">
+                           <div className="w-10 rounded-full ring-[#00bf592d] ring-2 ring-offset-1">
                               <img
                                  src={
                                     user?.photoURL
@@ -145,10 +145,10 @@ const Navbar = () => {
                         >
                            <div>
                               <div>
-                                 <h4 className="text-[23px] font-semibold capitalize rancho tracking-widest">
+                                 <h4 className="text-[18px] font-semibold capitalize rancho tracking-widest">
                                     {user?.displayName}
                                  </h4>
-                                 <p className="text-slate-600">{user?.email}</p>
+                                 <p className="text-[14px] text-slate-600">{user?.email}</p>
                               </div>
 
                               <button
