@@ -27,3 +27,7 @@ body {
 .cus-select {
    @apply w-full shadow-none border border-gray-200 bg-[#ECF3F0] focus-within:outline-0 focus:border focus:border-green-200 rounded-lg mt-1;
 }
+
+.btn-dev {
+   @apply text-primary text-[14px] font-semibold bg-[#00bf5911] hover:bg-[#00bf5928] border border-dashed border-primary px-5 py-2 rounded-full cursor-pointer duration-500
+}

@@ -1,9 +1,15 @@
+import toast from "react-hot-toast";
 import logo from "../assets/skilloria.png";
 import Button from "../components/Button";
+import useAuth from "../hooks/useAuth";
 import Container from "./Container";
 import { Link, NavLink } from "react-router";
+import { Tooltip } from "react-tooltip";
+import { FaCoins } from "react-icons/fa";
 
 const Navbar = () => {
+   const { user, logOutUser } = useAuth();
+
    const links = [
       <li key="home">
          <NavLink
@@ -18,16 +24,28 @@ const Navbar = () => {
       </li>,
 
       <li key={"dashboard"}>
-         <NavLink
-            to="/dashboard"
-            className={({ isActive, isPending }) =>
-               isPending ? "pending" : isActive ? "active" : ""
-            }
-         >
-            Dashboard
-         </NavLink>
+         {user ? (
+            <NavLink
+               to="/dashboard"
+               className={({ isActive, isPending }) =>
+                  isPending ? "pending" : isActive ? "active" : ""
+               }
+            >
+               Dashboard
+            </NavLink>
+         ) : (
+            ""
+         )}
       </li>,
    ];
+
+   const handleLogOut = () => {
+      logOutUser()
+         .then(() => {
+            toast.success("Logout Successfully");
+         })
+         .catch((error) => toast.error(error.code));
+   };
 
    return (
       <div className="sticky top-0 z-50 bg-[#fff]">
@@ -75,15 +93,82 @@ const Navbar = () => {
                </div>
 
                <div className="navbar-end space-x-4">
-                  <Link to={"/login"}>
-                     <button className="text-secondary font-semibold cursor-pointer">
-                        Login
-                     </button>
-                  </Link>
+                  {user ? (
+                     <div className="relative">
+                        <div className="border border-[#FEC40F] text-[#FEC40F] bg-[#fff3cf23] p-2 rounded-full">
+                           <FaCoins />
+                        </div>
+
+                        <span className="text-white text-[11px] font-semibold absolute -top-1 -right-1 bg-[#254035e8] h-4 w-4 rounded-full flex justify-center items-center">
+                           99
+                        </span>
+                     </div>
+                  ) : (
+                     ""
+                  )}
 
                   <Link to={"/register"}>
-                     <Button>Register</Button>
+                     <button className="btn-dev">Join as Developer</button>
                   </Link>
+
+                  {user ? (
+                     <>
+                        <div
+                           className="avatar avatar-online"
+                           data-tooltip-id="user-tooltip"
+                           data-tooltip-place="bottom"
+                        >
+                           <div className="w-10 rounded-full ring-[#e7f0ef] border border-dashed border-primary">
+                              <img
+                                 src={
+                                    user?.photoURL
+                                       ? user.photoURL
+                                       : "https://i.ibb.co/mFrvXNpF/avatar.png"
+                                 }
+                                 alt="User Avatar"
+                              />
+                           </div>
+                        </div>
+
+                        <Tooltip
+                           id="user-tooltip"
+                           className="text-secondary bg-secondary"
+                           clickable={true}
+                           style={{
+                              backgroundColor: "#E1E1E1",
+                              color: "#000",
+                              padding: "20px",
+                              borderRadius: "5px",
+                              textAlign: "center",
+                              fontSize: "14px",
+                           }}
+                        >
+                           <div>
+                              <div>
+                                 <h4 className="text-[23px] font-semibold capitalize rancho tracking-widest">
+                                    {user?.displayName}
+                                 </h4>
+                                 <p className="text-slate-600">{user?.email}</p>
+                              </div>
+
+                              <button
+                                 onClick={handleLogOut}
+                                 className="btn btn-primary btnHover text-white text-[14px] rounded-full mt-4"
+                              >
+                                 LogOut
+                              </button>
+                           </div>
+                        </Tooltip>
+                     </>
+                  ) : (
+                     <>
+                        <div className="hidden md:block">
+                           <Link to={"/register"}>
+                              <Button>Register</Button>
+                           </Link>
+                        </div>
+                     </>
+                  )}
                </div>
             </div>
          </Container>
