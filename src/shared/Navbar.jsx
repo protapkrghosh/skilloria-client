@@ -107,9 +107,13 @@ const Navbar = () => {
                      ""
                   )}
 
-                  <Link to={"/register"}>
+                  {/* Join as developer */}
+                  <a
+                     href="https://github.com/protapkrghosh/skilloria-client"
+                     target="_blank"
+                  >
                      <button className="btn-dev">Join as Developer</button>
-                  </Link>
+                  </a>
 
                   {user ? (
                      <>
@@ -148,7 +152,9 @@ const Navbar = () => {
                                  <h4 className="text-[18px] font-semibold capitalize rancho tracking-widest">
                                     {user?.displayName}
                                  </h4>
-                                 <p className="text-[14px] text-slate-600">{user?.email}</p>
+                                 <p className="text-[14px] text-slate-600">
+                                    {user?.email}
+                                 </p>
                               </div>
 
                               <button
