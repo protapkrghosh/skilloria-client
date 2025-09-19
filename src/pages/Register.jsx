@@ -4,8 +4,11 @@ import { toast } from "react-hot-toast";
 import useAuth from "../hooks/useAuth";
 import { useLocation, useNavigate } from "react-router";
 import SocialLogIn from "../components/SocialLogin";
+import { useState } from "react";
+import { ImEye, ImEyeBlocked } from "react-icons/im";
 
 const Register = () => {
+   const [showPassword, setShowPassword] = useState(false);
    const location = useLocation();
    const navigate = useNavigate();
    const from = location.state || "/";
@@ -124,10 +127,10 @@ const Register = () => {
                </div>
 
                {/* Password */}
-               <div>
+               <div className="relative">
                   <label className="label text-[15px]">Password*</label>
                   <input
-                     type="password"
+                     type={showPassword ? "text" : "password"}
                      placeholder="Enter Password"
                      {...register("password", {
                         required: "Password is required",
@@ -145,6 +148,22 @@ const Register = () => {
                      })}
                      className="cus-input"
                   />
+
+                  <span onClick={() => setShowPassword(!showPassword)} className="absolute top-[45px] right-2 z-30">
+                     {showPassword ? (
+                        <ImEye
+                           size={18}
+                           className="text-[#8B8B8D] mr-2 cursor-pointer"
+                        />
+                     ) : (
+                        <ImEyeBlocked
+                           size={18}
+                           className="text-[#8B8B8D] mr-2 cursor-pointer"
+                        />
+                     )}
+                  </span>
+
+                  {/* Error */}
                   {errors.password && (
                      <p className="text-red-500 text-sm">
                         {errors.password.message}
