@@ -6,6 +6,8 @@ import { useLocation, useNavigate } from "react-router";
 import SocialLogIn from "../components/SocialLogin";
 import { useState } from "react";
 import { ImEye, ImEyeBlocked } from "react-icons/im";
+import { updateProfile } from "firebase/auth";
+import { auth } from "../firebase/firebase.config";
 
 const Register = () => {
    const [showPassword, setShowPassword] = useState(false);
@@ -43,6 +45,16 @@ const Register = () => {
                      navigate(from);
                      reset();
                   }
+
+                  // Update user profile
+                  const profile = {
+                     displayName: name,
+                     photoURL: photoURL,
+                  };
+
+                  updateProfile(auth.currentUser, profile)
+                     .then(() => {})
+                     .catch((error) => toast.error(error.code));
                })
                .catch((error) => {
                   toast.error(error.response?.data?.message || error.code);
@@ -149,7 +161,10 @@ const Register = () => {
                      className="cus-input"
                   />
 
-                  <span onClick={() => setShowPassword(!showPassword)} className="absolute top-[45px] right-2 z-30">
+                  <span
+                     onClick={() => setShowPassword(!showPassword)}
+                     className="absolute top-[45px] right-2 z-30"
+                  >
                      {showPassword ? (
                         <ImEye
                            size={18}
