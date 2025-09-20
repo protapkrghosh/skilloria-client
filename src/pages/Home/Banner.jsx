@@ -1,7 +1,8 @@
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
-import img1 from "../../assets/side-banner.png";
-import sliderBg from "../../assets/slider-2-C6otvkOs.jpg";
+import slider1 from "../../assets/side-banner.png";
+import slider2 from "../../assets/slider-2-C6otvkOs.jpg";
+import slider3 from "../../assets/author-2-X5cLncgw.png";
 import { FaSearch } from "react-icons/fa";
 import { FaStar } from "react-icons/fa6";
 import { SlLocationPin } from "react-icons/sl";
@@ -91,7 +92,7 @@ const Banner = () => {
                         {/* Right Image */}
                         <div className="w-full lg:w-1/2 flex justify-center">
                            <img
-                              src={img1}
+                              src={slider1}
                               alt="Person working"
                               className="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-md xl:max-w-lg"
                            />
@@ -104,7 +105,7 @@ const Banner = () => {
             {/* Slider Two */}
             <div
                className="bg-[url(../../assets/slider-2-C6otvkOs.jpg)] py-24 bg-center"
-               style={{ backgroundImage: `url(${sliderBg})` }}
+               style={{ backgroundImage: `url(${slider2})` }}
             >
                <Container>
                   <section>
@@ -176,6 +177,82 @@ const Banner = () => {
                                  </div>
                               </div>
                            </div>
+                        </div>
+                     </div>
+                  </section>
+               </Container>
+            </div>
+
+            {/* Slider Three */}
+            <div className="bg-[#F1F5F8] py-24">
+               <Container>
+                  <section>
+                     <div className="md:relative max-w-7xl mx-auto flex flex-col-reverse lg:flex-row items-center gap-10">
+                        {/* Left Content */}
+                        <div className="w-full lg:w-1/2 text-start">
+                           <p className="text-secondary font-semibold bg-[#BDE4D4] mb-5 w-fit px-4 py-2 rounded-full">
+                              <span className="text-white font-normal bg-primary px-3 rounded-full py-0.5 mr-1">New</span>{" "}
+                              Collaborate with team
+                           </p>
+
+                           <h1 className="w-[85%] text-6xl md:text-5xl font-bold text-gray-800 leading-16 mt-2 mb-5">
+                              Remote Work Platform For Digital Team
+                           </h1>
+
+                           <p className="text-xl font-medium leading-9 mb-10">
+                              Getting a new job is never easy. Check what new
+                              jobs we have in store for you on JobStock.
+                           </p>
+
+                           {/* Review Section */}
+                           <div className="text-sm text-gray-600">
+                              <div className="flex items-center gap-6">
+                                 <p className="text-secondary font-semibold">
+                                    14k reviews on
+                                 </p>
+
+                                 <div className="flex text-yellow-500 text-base">
+                                    {[...Array(5)].map((_, i) => (
+                                       <FaStar key={i} />
+                                    ))}
+                                 </div>
+                              </div>
+
+                              <div className="flex items-center gap-3 mt-3">
+                                 {/* Rating Number */}
+                                 <div className="flex items-center text-secondary font-bold text-lg">
+                                    <FaShare className="mr-2 text-lg text-[#03D574]" />{" "}
+                                    4.9
+                                 </div>
+
+                                 {/* Avatars */}
+                                 <div className="flex -space-x-3">
+                                    {["1", "8", "4", "5"].map((id) => (
+                                       <div key={id} className="avatar">
+                                          <div className="w-10 rounded-full border-2 border-white">
+                                             <img
+                                                src={`https://i.pravatar.cc/150?img=${id}`}
+                                                alt="user"
+                                             />
+                                          </div>
+                                       </div>
+                                    ))}
+
+                                    <div className="w-10 h-10 flex items-center justify-center bg-[#E7F4FF] text-secondary font-semibold text-xs rounded-full border-2 border-white">
+                                       12k
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+
+                        {/* Right Image */}
+                        <div className="w-full lg:w-1/2 flex justify-center">
+                           <img
+                              src={slider3}
+                              alt="Person working"
+                              className="md:absolute -top-[70px] max-w-xs sm:max-w-sm md:max-w-md lg:max-w-md xl:max-w-lg"
+                           />
                         </div>
                      </div>
                   </section>
