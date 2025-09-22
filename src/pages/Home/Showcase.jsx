@@ -21,10 +21,14 @@ const Showcase = () => {
                   </h2>
 
                   <p className="text-gray-600 mt-4 mb-8 leading-8">
-                     Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                     sed do eiusmod tempor incididunt ut labore et dolore magna
-                     aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                     ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                     Discover thousands of opportunities from top companies
+                     worldwide. Our platform connects talented professionals
+                     with top companies, making the hiring process easier,
+                     faster, and more effective. Whether you are looking for
+                     corporate opportunities, creative roles, or remote jobs, we
+                     provide the tools and resources to help you succeed. Build
+                     your profile, showcase your expertise, and take the next
+                     step in your career journey with confidence.
                   </p>
 
                   {/* Features list */}
@@ -66,7 +70,7 @@ const Showcase = () => {
                      </div>
 
                      {/* Floating logos */}
-                     <div className="bg-white p-5 rounded-full absolute top-14 left-10 animate-bounce shadow-md">
+                     <div className="bg-white p-5 rounded-full absolute top-14 left-10 animate-slowbounce shadow-md">
                         <img
                            src={fireLogo}
                            alt="fire"
@@ -74,7 +78,7 @@ const Showcase = () => {
                         />
                      </div>
 
-                     <div className="bg-white p-5 rounded-full absolute top-14 right-8 animate-bounce shadow-md">
+                     <div className="bg-white p-5 rounded-full absolute top-14 right-8 animate-slowbounce shadow-md">
                         <img
                            src={airbnbLogo}
                            alt="airbnb"
@@ -82,7 +86,7 @@ const Showcase = () => {
                         />
                      </div>
 
-                     <div className="bg-white p-5 rounded-full absolute -bottom-8 left-5/12 animate-bounce shadow-md">
+                     <div className="bg-white p-5 rounded-full absolute -bottom-8 left-5/12 animate-slowbounce shadow-md">
                         <img
                            src={skypeLogo}
                            alt="skype"

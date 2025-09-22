@@ -21,6 +21,7 @@ body {
    font-family: "EB Garamond", serif;
 }
 
+/* Register and Login page */
 .cus-input {
    @apply input w-full shadow-none border border-gray-200 bg-[#ECF3F0] focus-within:outline-0 focus:border focus:border-green-200 rounded-lg py-6 mt-1;
 }
@@ -29,6 +30,22 @@ body {
    @apply w-full shadow-none border border-gray-200 bg-[#ECF3F0] focus-within:outline-0 focus:border focus:border-green-200 rounded-lg mt-1;
 }
 
+/* Navbar */
 .btn-dev {
-   @apply text-primary text-[14px] font-semibold bg-[#00bf5911] hover:bg-[#00bf5928] border border-dashed border-primary px-5 py-2 rounded-full cursor-pointer duration-500
+   @apply text-primary text-[14px] font-semibold bg-[#00bf5911] hover:bg-[#00bf5928] border border-dashed border-primary px-5 py-2 rounded-full cursor-pointer duration-500;
+}
+
+/* Showcase section */
+@keyframes slowbounce {
+   0%,
+   100% {
+      transform: translateY(0);
+   }
+   50% {
+      transform: translateY(-20px);
+   }
+}
+
+.animate-slowbounce {
+   animation: slowbounce 2.5s ease-out infinite;
 }
