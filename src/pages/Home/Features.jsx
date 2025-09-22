@@ -4,7 +4,7 @@ import featuresData from "../../../public/features.json";
 
 const Features = () => {
    return (
-      <section className="py-20">
+      <section className="py-16">
          <div className="max-w-7xl mx-auto px-4 flex flex-col lg:flex-row items-center gap-12">
             {/* Left Image */}
             <div className="relative w-full lg:w-1/2 flex justify-center">
@@ -59,10 +59,10 @@ const Features = () => {
                   Trusted & Popular <br /> Job Portal
                </h2>
 
-               <p className="text-gray-600 mt-4 mb-8 leading-relaxed">
-                  At vero eos et accusamus et iusto odio dignissimos ducimus qui
-                  blanditiis praesentium voluptatum deleniti atque corrupti quos
-                  dolores
+               <p className="text-gray-600 mt-4 mb-8 leading-7">
+                  Explore thousands of verified job opportunities from trusted
+                  companies worldwide. Find the right career path, connect with
+                  top employers, and apply without any hidden charges.
                </p>
 
                <div className="space-y-6">
@@ -75,10 +75,11 @@ const Features = () => {
                         </div>
 
                         <div>
-                           <h4 className="text-lg font-semibold text-gray-800">
+                           <h4 className="text-lg font-semibold text-secondary">
                               {item.title}
                            </h4>
-                           <p className="text-gray-600 text-sm mt-1">
+
+                           <p className="text-gray-500 text-sm mt-1 leading-7">
                               {item.desc}
                            </p>
                         </div>

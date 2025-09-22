@@ -1,14 +1,16 @@
+import { Link } from "react-router";
 import { FaCheck } from "react-icons/fa6";
 import showcaseImg from "../../assets/showcase.png";
 import airbnbLogo from "../../assets/l-7-C2IbzGL6.png";
 import skypeLogo from "../../assets/l-10-BpvHgnZJ.png";
 import fireLogo from "../../assets/l-4-Dl0Vv78N.png";
 import Container from "../../components/Container";
+import showcaseData from "../../../public/showcase.json";
 
 const Showcase = () => {
    return (
       <Container>
-         <section className="py-20">
+         <section className="py-16">
             <div className="max-w-7xl mx-auto px-4 flex flex-col-reverse lg:flex-row items-center gap-12">
                {/* Left Content */}
                <div className="w-full lg:w-1/2 text-start">
@@ -32,29 +34,25 @@ const Showcase = () => {
                   </p>
 
                   {/* Features list */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-8 gap-x-8 mb-8">
-                     {[
-                        "Corporate Business jobs",
-                        "Company Showcase",
-                        "Creative Services",
-                        "Easy To Upload Resume",
-                        "Online E-commerce",
-                        "Hire Expert Candidates",
-                     ].map((feature, idx) => (
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-8 gap-x-8 mb-14">
+                     {showcaseData.map((feature, idx) => (
                         <div
                            key={idx}
                            className="flex items-center gap-2 text-gray-700"
                         >
                            <FaCheck className="text-green-600" />
-                           <span>{feature}</span>
+                           <span>{feature?.benefit}</span>
                         </div>
                      ))}
                   </div>
 
                   {/* Button */}
-                  <button className="bg-primary hover:bg-secondary text-white font-medium px-6 py-5 rounded-md transition duration-500">
+                  <Link
+                     to={"/"}
+                     className="bg-primary hover:bg-secondary text-white font-medium px-6 py-5 rounded-md transition duration-500"
+                  >
                      Explore More Jobs
-                  </button>
+                  </Link>
                </div>
 
                {/* Right Image with wavy mask */}
