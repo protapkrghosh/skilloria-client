@@ -1,0 +1,42 @@
+[
+      {
+         "name": "Lucia E. Nugent",
+         "title": "The best useful website",
+         "role": "CEO of Climber",
+         "image": "../src/assets/team-1-Dk2b_Pxk.jpg",
+         "rating": 4,
+         "text": "This website is very helpful and easy to use. It has all the features I need, and everything works smoothly. I use it daily and highly recommend it to others."
+      },
+      {
+         "name": "Brenda R. Smith",
+         "title": "Ranking is the #1",
+         "role": "Founder of Yeloower",
+         "image": "../src/assets/team-2-CL-rmPku.jpg",
+         "rating": 4,
+         "text": "Our SEO improved a lot after using this platform. It helped increase our site’s visibility quickly with simple but powerful tools. Highly effective for growth."
+      },
+      {
+         "name": "Brian B. Wilkerson",
+         "title": "Impressive customer support",
+         "role": "CEO of Mark Soft",
+         "image": "../src/assets/team-3-CYFXbAzK.jpg",
+         "rating": 4,
+         "text": "The support team is fast, friendly, and very helpful. They solve problems quickly and make sure users feel valued. Excellent customer care."
+      },
+      {
+         "name": "Miguel L. Benbow",
+         "title": "100% save and secure website",
+         "role": "Founder of Mitche LTD",
+         "image": "../src/assets/team-4-Be8Q5htU.jpg",
+         "rating": 5,
+         "text": "This website offers great security with encrypted data and two-factor authentication. I trust it completely for storing sensitive information safely."
+      },
+      {
+         "name": "Hilda A. Sheppard",
+         "title": "Very developer friendly website",
+         "role": "CEO of Doodle",
+         "image": "../src/assets/team-5-Bma988LL.jpg",
+         "rating": 4,
+         "text": "As a developer, I love the clear documentation and easy integration. The platform is flexible and supports customization perfectly for any project."
+      }
+   ]
